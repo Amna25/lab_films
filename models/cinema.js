@@ -19,7 +19,7 @@ Cinema.prototype.getFilmByTitle= function(title){
 }
 Cinema.prototype.getFilmsByGenre = function(genre){
   const result = this.films.filter((film) =>{
-    if (film.genre === genre){
+    if (film[property] === check){
       return film
     }
   })
@@ -46,6 +46,13 @@ Cinema.prototype.filmLength = function(length){
     }
     return result
   }, true)
+  return result
+}
+
+Cinema.prototype.totalRunningTime = function(){
+  const result = this.films.reduce((result, film) =>{
+    return film.length + result
+  }, 0)
   return result
 }
 
