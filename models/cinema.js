@@ -17,5 +17,26 @@ Cinema.prototype.getFilmByTitle= function(title){
   }, null)
   return result
 }
+Cinema.prototype.getFilmsByGenre = function(genre){
+  const result = this.films.filter((film) =>{
+    if (film.genre === genre){
+      return film
+    }
+  })
+  return result
+}
+
+Cinema.prototype.getFilmByYear = function(year){
+  
+  const result = this.films.reduce((result,film) => {
+    if(film.year === year){
+      result = true
+    }
+    return result;
+    
+  }, false);
+
+  return result
+}
 
 module.exports = Cinema;
