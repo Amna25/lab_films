@@ -39,4 +39,14 @@ Cinema.prototype.getFilmByYear = function(year){
   return result
 }
 
+Cinema.prototype.filmLength = function(length){
+  const result = this.films.reduce((result, film)=> {
+    if(film.length < length){
+      result = false
+    }
+    return result
+  }, true)
+  return result
+}
+
 module.exports = Cinema;
